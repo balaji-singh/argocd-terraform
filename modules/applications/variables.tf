@@ -16,3 +16,8 @@ variable "applications" {
     sync_self_heal      = bool
   }))
 }
+
+variable "helm_release_name" {
+  description = "Name of the ArgoCD Helm release to depend on"
+  type        = string
+}

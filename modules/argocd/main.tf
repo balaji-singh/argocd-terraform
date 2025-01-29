@@ -7,7 +7,6 @@ resource "kubernetes_namespace" "argocd" {
   }
 }
 
-
 resource "helm_release" "argocd" {
   name       = "argocd"
   repository = "https://argoproj.github.io/argo-helm"
@@ -39,18 +38,4 @@ resource "helm_release" "argocd" {
       }
     })
   ]
-}
-
-resource "kubernetes_secret" "argocd_secret" {
-  metadata {
-    name      = "argocd-secret"
-    namespace = kubernetes_namespace.argocd.metadata[0].name
-  }
-
-  data = {
-    "admin.password" = var.admin_password
-    "server.secretkey" = var.server_secretkey
-  }
-
-  type = "Opaque"
 }

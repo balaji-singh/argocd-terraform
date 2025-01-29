@@ -1,5 +1,5 @@
 module "argocd" {
-  source = "./modules/argocd"
+  source = "../modules/argocd"
 
   namespace             = var.argocd_namespace
   argocd_version        = var.argocd_version
@@ -12,12 +12,4 @@ module "argocd" {
   ha_enabled            = var.ha_enabled
   admin_password        = var.admin_password
   server_secretkey      = var.server_secretkey
-}
-
-module "applications" {
-  source     = "./modules/applications"
-  depends_on = [module.argocd]
-
-  argocd_namespace = module.argocd.namespace
-  applications     = var.applications
 }

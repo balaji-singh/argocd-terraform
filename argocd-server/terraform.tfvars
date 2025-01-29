@@ -1,0 +1,10 @@
+kubeconfig_path       = "~/.kube/config"
+argocd_namespace      = "argocd"
+service_type          = "LoadBalancer"
+ingress_enabled       = true
+ingress_hosts         = ["argocd.example.com"]
+dex_enabled           = true
+notifications_enabled = true
+ha_enabled            = true
+admin_password        = "password"
+server_secretkey      = "secretkey"
