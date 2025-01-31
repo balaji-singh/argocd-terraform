@@ -1,5 +1,5 @@
 module "argocd" {
-  source = "../modules/argocd"
+  source = "../../../modules/argocd"
 
   namespace             = var.argocd_namespace
   argocd_version        = var.argocd_version

@@ -13,7 +13,7 @@ resource "null_resource" "wait_for_crds" {
 }
 
 module "applications" {
-  source     = "../modules/applications"
+  source     = "../../../modules/applications"
   depends_on = [null_resource.wait_for_crds]
 
   argocd_namespace  = var.argocd_namespace
